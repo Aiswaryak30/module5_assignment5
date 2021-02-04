@@ -12,11 +12,11 @@
         $stateProvider
         .state('home',{
             url:'/home',
-            templateUrl:'src/templates/home.html'
+            templateUrl:'home.html'
         })
         .state('signin',{
             url:'/sign_in',
-            templateUrl:'src/templates/signin.html',
+            templateUrl:'signin.html',
             controller:'RegController as Reg'
          
            
@@ -30,7 +30,7 @@
         // })
         .state('login',{
             url:'/login',
-            templateUrl:'src/templates/myinfo.html',
+            templateUrl:'myinfo.html',
             controller: 'MyInfoController',
             controllerAs: 'myInfoCtrl',
             resolve: {
