@@ -23,7 +23,7 @@
 <td><span ng-if="regForm.phone.$invalid && regForm.phone.$touched">Phone Number must be in the format ###-###-####</span></td></tr> 
     <br>
     <tr><td> <label for="menu">Favorite Dish</label> </td>
-      <td><input type="text" class="form-control" id="menu" name="menu" placeholder="Short Code of Your Favorite Dish" ng-model="Reg.user.menu" ng-blur="Reg.validateFavdish()"></td>
+      <td><input type="text" class="form-control" id="menu" name="menu" placeholder="Short Code(capital letter)" ng-model="Reg.user.menu" ng-blur="Reg.validateFavdish()"></td>
     <td> 
       <span ng-if="Reg.itemSearched && !Reg.validShortCode">
         <p>No such menu number exists</p></td></tr>
