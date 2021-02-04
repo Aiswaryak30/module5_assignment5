@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="styles.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    
+    <title>Restaurant App</title>
+</head>
+<body ng-app="restaurant">
+<div class="header">
+
+    <div class="header-right">
+    
+      <a ui-sref="home" ui-sref-active="activeTab">Home</a>
+      <a ui-sref="signin" ui-sref-active="activeTab">Sign Up</a>
+      <a ui-sref="login" ui-sref-active="activeTab">Info</a>
+     
+    </div>
+  </div>
+
+  <ui-view></ui-view>
+  
+    <script src="/lib/angular.min.js"></script>
+    <script src="/lib/angular-ui-router.min.js"></script>
+    <script src="/src/common.module.js"></script>
+    <script src="/src/restaurant.module.js"></script>
+    <script src="/src/restaurant.routes.js"></script>
+    <script src="/src/myinfo.js"></script>
+    <script src="/src/restaurant.service.js"></script>
+    <script src="/src/menu-item.component.js"></script>
+    <script src="/src/restaurant.controller.js"></script>
+   
+    <script src="/src/myinfo-controller.js"></script>
+    
+
+</body>
+</html>

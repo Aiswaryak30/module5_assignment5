@@ -1,0 +1,48 @@
+
+
+
+<div class="container" >
+  <fieldset>
+    <legend>Sign Up</legend>
+    <form name="regForm" novalidate>
+      <table style="border-spacing: 10px;">
+      <tr><td>First Name  </td><td> <input type="text" name="firstname" placeholder="First Name" ng-model="Reg.user.firstname" required minlength="4" ng-maxlength="10">
+        {{Reg.user.firstname}}</td>
+      <td><span ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">First name must be at least 4 characters</span></td></tr> 
+    <br><tr><td>Last Name  </td>
+    <td><input type="text" name="lastname" placeholder="Last Name" ng-model="Reg.user.lastname" required></td>
+  <td>{{Reg.user.lastname}}
+    <span ng-if="regForm.lastname.$error.required && regForm.lastname.$touched">Give a Last Name</span>
+  </td></tr>
+   <br> <tr><td>Email ID  </td>
+  <td><input type="email" name="email" placeholder="Email" ng-model="Reg.user.email" required></td>
+  <td><span ng-if="regForm.email.$invalid && regForm.email.$touched">Must be valid mail id:abc@domain format</span></td></tr>
+   <br>
+   <tr><td>Phone Number </td>
+  <td><input type="text"  name="phone" placeholder="phone ###-###-####" ng-model="Reg.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})" required></td>
+<td><span ng-if="regForm.phone.$invalid && regForm.phone.$touched">Phone Number must be in the format ###-###-####</span></td></tr> 
+    <br>
+    <tr><td> <label for="menu">Favorite Dish</label> </td>
+      <td><input type="text" class="form-control" id="menu" name="menu" placeholder="Short Code of Your Favorite Dish" ng-model="Reg.user.menu" ng-blur="Reg.validateFavdish()"></td>
+    <td> 
+      <span ng-if="Reg.itemSearched && !Reg.validShortCode">
+        <p>No such menu number exists</p></td></tr>
+    <br>
+    <tr><td> <button class="btn btn-success"
+      ng-disabled="regForm.$invalid"
+      ng-model="Reg.submit"
+      ng-click="Reg.setinfo()">Submit</button></td>
+    </tr>
+    
+      </table>
+   
+        
+</form>
+</fieldset>
+</div>
+<div class="signup-savemessage" ng-if="Reg.saved">
+  <p class="alert alert-success">Your information has been saved!</p>
+</div>
+<div class="signup-searchresults" ng-if="Reg.validShortCode">
+  <menu-item menu-item="Reg.user.MenuItem"></menu-item>
+</div>
